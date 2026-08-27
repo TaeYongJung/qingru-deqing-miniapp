@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="user-card">
+    <view class="avatar">👤</view>
+    <view>
+      <view class="name">微信用户</view>
+      <view class="desc">欢迎来到青入德清</view>
+    </view>
+  </view>
+
+  <view class="menu">
+    <view>我的收藏</view>
+    <view>我提供的信息</view>
+    <view>反馈记录</view>
+    <view>关于我们</view>
+    <view>设置</view>
+  </view>
+</view>
