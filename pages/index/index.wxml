@@ -5,32 +5,18 @@
     <view class="banner-tip">发现机会 · 扎根乡村 · 共创未来</view>
   </view>
 
-  <view class="entry green" bindtap="goList">
+  <view class="entry green" data-type="项目机会" bindtap="goList">
     <view class="icon">🌱</view>
-    <view>
-      <text class="title">我能来做什么</text>
-      <text class="desc">找岗位 · 找实践 · 找创业方向 · 项目参与</text>
-    </view>
+    <view><text class="title">我能来做什么</text><text class="desc">乡村运营 · 电商直播 · 文创 · 数字农业等机会</text></view>
   </view>
 
-  <view class="entry blue" bindtap="goList">
+  <view class="entry blue" data-type="实践站点" bindtap="goList">
     <view class="icon">🏡</view>
-    <view>
-      <text class="title">德清能提供什么</text>
-      <text class="desc">政策支持 · 创业空间 · 实践基地 · 资源链接</text>
-    </view>
+    <view><text class="title">德清能提供什么</text><text class="desc">政策补贴 · 创业空间 · 实践站点 · 培训社群</text></view>
   </view>
 
-  <view class="entry orange" bindtap="goList">
+  <view class="entry orange" data-type="咨询单位" bindtap="goList">
     <view class="icon">🤝</view>
-    <view>
-      <text class="title">我该找谁</text>
-      <text class="desc">政府部门 · 服务机构 · 联系人 · 咨询渠道</text>
-    </view>
-  </view>
-
-  <view class="map-card">
-    <view class="map-title">探索德清青年机会地图</view>
-    <view class="map-desc">查看各镇街站点、空间与项目分布</view>
+    <view><text class="title">我该找谁</text><text class="desc">官方咨询单位 · 联系方式 · 服务入口</text></view>
   </view>
 </view>
