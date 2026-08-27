@@ -1,0 +1,19 @@
+<view class="container">
+ <view class="title">青入德清</view>
+ <view class="subtitle">青年入乡机会与资源卡</view>
+
+ <view class="card green" bindtap="goList">
+  <text>我能来做什么</text>
+  <text>乡村运营、电商直播、文创、数字农业机会</text>
+ </view>
+
+ <view class="card blue" bindtap="goList">
+  <text>德清能提供什么</text>
+  <text>政策补贴、创业空间、实践站点</text>
+ </view>
+
+ <view class="card orange" bindtap="goList">
+  <text>我该找谁</text>
+  <text>官方咨询单位、联系方式</text>
+ </view>
+</view>
