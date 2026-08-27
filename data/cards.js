@@ -1,0 +1,26 @@
+module.exports = [
+  {
+    id:1,
+    name:'百源康鱼菜共生实践基地',
+    type:'实践站点',
+    target:'农学、生物、环境、电商、文旅青年',
+    location:'洛舍镇·东衡村',
+    benefit:'农业岗位实践、生态农业项目调研、研学活动合作',
+    update:'长期有效',
+    phone:'400-6915691',
+    source:'德清新闻网、央广网报道',
+    status:'长期有效'
+  },
+  {
+    id:2,
+    name:'青年入乡创新创业大赛',
+    type:'比赛',
+    target:'设计、电商、农业、文旅青年',
+    location:'德清县',
+    benefit:'场地、培训、项目对接',
+    update:'2026-08',
+    phone:'官方咨询',
+    source:'政府网站',
+    status:'招募中'
+  }
+]
