@@ -1,0 +1,22 @@
+<view class="page">
+  <view class="banner">
+    <view class="banner-title">青入德清</view>
+    <view class="banner-sub">青年入乡机会与资源平台</view>
+    <view class="banner-tip">发现机会 · 扎根乡村 · 共创未来</view>
+  </view>
+
+  <view class="entry green" data-type="项目机会" bindtap="goList">
+    <view class="icon">🌱</view>
+    <view><text class="title">我能来做什么</text><text class="desc">乡村运营 · 电商直播 · 文创 · 数字农业等机会</text></view>
+  </view>
+
+  <view class="entry blue" data-type="实践站点" bindtap="goList">
+    <view class="icon">🏡</view>
+    <view><text class="title">德清能提供什么</text><text class="desc">政策补贴 · 创业空间 · 实践站点 · 培训社群</text></view>
+  </view>
+
+  <view class="entry orange" data-type="咨询单位" bindtap="goList">
+    <view class="icon">🤝</view>
+    <view><text class="title">我该找谁</text><text class="desc">官方咨询单位 · 联系方式 · 服务入口</text></view>
+  </view>
+</view>
