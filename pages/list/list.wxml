@@ -1,14 +1,38 @@
 <view class="page">
-  <view class="title">我能来做什么</view>
-  <input class="search" placeholder="搜索机会" bindinput="search" />
-  <view class="tabs">全部　实践站点　实习　项目</view>
+  <view class="header">
+    <view class="back">‹</view>
+    <view class="title">我能来做什么</view>
+  </view>
+
+  <view class="search-box">
+    <text class="search-icon">🔍</text>
+    <input placeholder="搜索关键词，如：电商、文创、实践站点" bindinput="search" />
+  </view>
+
+  <scroll-view scroll-x class="tabs" enable-flex>
+    <view class="tab active">全部</view>
+    <view class="tab">实践站点</view>
+    <view class="tab">实习/就业</view>
+    <view class="tab">项目机会</view>
+    <view class="tab">比赛</view>
+  </scroll-view>
+
+  <view class="list-tip">发现适合青年入乡的机会</view>
+
   <block wx:for="{{cards}}" wx:key="id">
     <view class="card" data-id="{{item.id}}" bindtap="openDetail">
-      <view class="card-title">{{item.title}}</view>
-      <text class="tag">{{item.type}}</text>
-      <view>📍 {{item.location}}</view>
-      <view class="desc">{{item.desc}}</view>
-      <text>{{item.status}}</text>
+      <view class="card-main">
+        <view class="card-left">
+          <view class="card-title">{{item.title}}</view>
+          <text class="tag">{{item.type}}</text>
+          <view class="location">📍 {{item.location}}</view>
+          <view class="desc">{{item.desc}}</view>
+          <view class="status">{{item.status}}</view>
+        </view>
+        <view class="image-box">机会</view>
+      </view>
     </view>
   </block>
+
+  <view class="empty">没有更多机会了</view>
 </view>
