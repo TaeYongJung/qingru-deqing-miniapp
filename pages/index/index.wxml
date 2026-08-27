@@ -9,7 +9,7 @@
     <view class="icon">🌱</view>
     <view>
       <text class="title">我能来做什么</text>
-      <text class="desc">找岗位、找实践、找创业方向</text>
+      <text class="desc">找岗位 · 找实践 · 找创业方向 · 项目参与</text>
     </view>
   </view>
 
@@ -17,7 +17,7 @@
     <view class="icon">🏡</view>
     <view>
       <text class="title">德清能提供什么</text>
-      <text class="desc">政策支持、创业空间、实践基地</text>
+      <text class="desc">政策支持 · 创业空间 · 实践基地 · 资源链接</text>
     </view>
   </view>
 
@@ -25,14 +25,12 @@
     <view class="icon">🤝</view>
     <view>
       <text class="title">我该找谁</text>
-      <text class="desc">政府部门、服务机构、联系人</text>
+      <text class="desc">政府部门 · 服务机构 · 联系人 · 咨询渠道</text>
     </view>
   </view>
 
-  <view class="section-title">热门机会</view>
-  <view class="hot-card">
-    <text class="hot-title">百源康鱼菜共生实践基地</text>
-    <text>洛舍镇 · 实践站点</text>
-    <text>农业实践、生态农业项目调研</text>
+  <view class="map-card">
+    <view class="map-title">探索德清青年机会地图</view>
+    <view class="map-desc">查看各镇街站点、空间与项目分布</view>
   </view>
 </view>
