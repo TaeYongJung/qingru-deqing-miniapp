@@ -28,7 +28,10 @@ Page({
 
   filterCards(type, keyword) {
     let cards = type
-      ? allCards.filter(item => item.type.includes(type) || item.category === type)
+      ? allCards.filter(item => {
+          if (type === '项目机会') return item.category === '项目机会'
+          return item.type.includes(type) || item.category === type
+        })
       : allCards
 
     if (keyword) {
@@ -36,7 +39,9 @@ Page({
         (item.title || '').includes(keyword) ||
         (item.type || '').includes(keyword) ||
         (item.location || '').includes(keyword) ||
-        (item.desc || '').includes(keyword)
+        (item.desc || '').includes(keyword) ||
+        (item.target || '').includes(keyword) ||
+        (item.benefit || '').includes(keyword)
       )
     }
     return cards
@@ -50,7 +55,7 @@ Page({
 
   openDetail(e) {
     wx.navigateTo({
-      url:'/pages/detail/detail?id=' + e.currentTarget.dataset.id
+      url: '/pages/detail/detail?id=' + e.currentTarget.dataset.id
     })
   },
 
