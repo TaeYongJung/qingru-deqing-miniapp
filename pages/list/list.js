@@ -4,13 +4,20 @@ Page({
   data: {
     cards: [],
     keyword: '',
-    currentType: ''
+    currentType: '',
+    pageTitle: '我能来做什么'
   },
 
   onLoad(options) {
     const type = options.type || ''
+    const titleMap = {
+      '项目机会': '我能来做什么',
+      '实践站点': '德清能提供什么',
+      '咨询单位': '我该找谁'
+    }
+    const pageTitle = titleMap[type] || '我能来做什么'
     const cards = type ? allCards.filter(item => item.type.includes(type) || item.category === type) : allCards
-    this.setData({ cards, currentType:type })
+    this.setData({ cards, currentType: type, pageTitle })
   },
 
   search(e) {
