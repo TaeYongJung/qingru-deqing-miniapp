@@ -4,10 +4,7 @@
     <view class="contact-hero-label">联系单位</view>
     <view class="contact-hero-subtitle">德清县青年服务咨询</view>
   </view>
-
-  <view wx:else class="hero">
-    <text>青年机会</text>
-  </view>
+  <view wx:else class="hero"><text>青年机会</text></view>
 
   <view class="main-card">
     <view class="title">{{item.title}}</view>
@@ -20,17 +17,14 @@
     <text class="section-title">单位简介</text>
     <view class="content">{{item.desc}}</view>
   </view>
-
   <view wx:if="{{isContact}}" class="section">
     <text class="section-title">适合咨询</text>
     <view class="content">{{item.target}}</view>
   </view>
-
   <view wx:if="{{isContact}}" class="section">
     <text class="section-title">可咨询事项</text>
     <view class="content">{{item.benefit}}</view>
   </view>
-
   <view wx:if="{{isContact}}" class="section contact-info">
     <text class="section-title">联系方式</text>
     <view class="contact-row">
@@ -41,29 +35,33 @@
   </view>
 
   <view wx:else class="section">
-    <text class="section-title">关于机会</text>
+    <text class="section-title">机会简介</text>
     <view class="content">{{item.desc}}</view>
   </view>
-
   <view wx:if="{{!isContact}}" class="section">
-    <text class="section-title">适合青年</text>
+    <text class="section-title">适合对象</text>
     <view class="content">{{item.target}}</view>
   </view>
-
   <view wx:if="{{!isContact}}" class="section">
-    <text class="section-title">你将获得</text>
+    <text class="section-title">能获得什么</text>
     <view class="content">{{item.benefit}}</view>
   </view>
-
+  <view wx:if="{{!isContact}}" class="section">
+    <text class="section-title">截止或更新时间</text>
+    <view class="content">{{item.deadline}}</view>
+  </view>
   <view wx:if="{{!isContact}}" class="section">
     <text class="section-title">咨询渠道</text>
     <view class="content">{{item.phone}}</view>
+  </view>
+  <view wx:if="{{!isContact}}" class="section">
+    <text class="section-title">信息来源</text>
+    <view class="content">{{item.source}}</view>
   </view>
 
   <view wx:if="{{isContact}}" class="bottom-actions">
     <button class="primary full" bindtap="callPhone">立即联系</button>
   </view>
-
   <view wx:else class="bottom-actions">
     <button>⭐ 收藏</button>
     <button class="primary">立即咨询</button>
