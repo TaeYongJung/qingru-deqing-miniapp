@@ -35,8 +35,7 @@
         <view class="contact-benefit">可咨询：{{item.benefit}}</view>
         <view class="contact-actions">
           <button class="detail-btn" data-id="{{item.id}}" bindtap="openDetail">查看详情</button>
-          <button wx:if="{{item.phone && item.phone.match && false}}" class="call-btn">联系</button>
-          <button wx:else class="call-btn" data-phone="{{item.phone}}" bindtap="callPhone">电话咨询</button>
+          <button class="call-btn" data-phone="{{item.phone}}" bindtap="callPhone">电话咨询</button>
         </view>
       </view>
     </view>
