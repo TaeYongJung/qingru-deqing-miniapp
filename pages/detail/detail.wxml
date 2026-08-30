@@ -1,36 +1,70 @@
 <view class="page">
-  <view class="hero">
+  <view wx:if="{{isContact}}" class="contact-hero">
+    <view class="contact-hero-icon">🤝</view>
+    <view class="contact-hero-label">联系单位</view>
+    <view class="contact-hero-subtitle">德清县青年服务咨询</view>
+  </view>
+
+  <view wx:else class="hero">
     <text>青年机会</text>
   </view>
 
   <view class="main-card">
     <view class="title">{{item.title}}</view>
-    <view class="tag">{{item.type}}</view>
+    <view class="tag">{{isContact ? '官方咨询单位' : item.type}}</view>
     <view class="location">📍 {{item.location}}</view>
-    <view class="status">{{item.status}}</view>
+    <view wx:if="{{item.status}}" class="status">{{item.status}}</view>
   </view>
 
-  <view class="section">
+  <view wx:if="{{isContact}}" class="section">
+    <text class="section-title">单位简介</text>
+    <view class="content">{{item.desc}}</view>
+  </view>
+
+  <view wx:if="{{isContact}}" class="section">
+    <text class="section-title">适合咨询</text>
+    <view class="content">{{item.target}}</view>
+  </view>
+
+  <view wx:if="{{isContact}}" class="section">
+    <text class="section-title">可咨询事项</text>
+    <view class="content">{{item.benefit}}</view>
+  </view>
+
+  <view wx:if="{{isContact}}" class="section contact-info">
+    <text class="section-title">联系方式</text>
+    <view class="contact-row">
+      <text class="contact-label">咨询电话</text>
+      <text class="contact-value">{{item.phone}}</text>
+    </view>
+    <view class="contact-note">如电话信息发生变化，请以德清县人民政府及相关部门最新公开信息为准。</view>
+  </view>
+
+  <view wx:else class="section">
     <text class="section-title">关于机会</text>
     <view class="content">{{item.desc}}</view>
   </view>
 
-  <view class="section">
+  <view wx:if="{{!isContact}}" class="section">
     <text class="section-title">适合青年</text>
     <view class="content">{{item.target}}</view>
   </view>
 
-  <view class="section">
+  <view wx:if="{{!isContact}}" class="section">
     <text class="section-title">你将获得</text>
     <view class="content">{{item.benefit}}</view>
   </view>
 
-  <view class="section">
+  <view wx:if="{{!isContact}}" class="section">
     <text class="section-title">咨询渠道</text>
     <view class="content">{{item.phone}}</view>
   </view>
 
-  <view class="bottom-actions">
+  <view wx:if="{{isContact}}" class="bottom-actions">
+    <button class="primary full" bindtap="callPhone">立即联系</button>
+  </view>
+
+  <view wx:else class="bottom-actions">
     <button>⭐ 收藏</button>
     <button class="primary">立即咨询</button>
   </view>
