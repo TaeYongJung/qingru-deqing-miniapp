@@ -30,6 +30,8 @@ Page({
     let cards = type
       ? allCards.filter(item => {
           if (type === '项目机会') return item.category === '项目机会'
+          if (type === '实践站点') return item.category === '德清能提供什么'
+          if (type === '咨询单位') return item.type === '咨询单位'
           return item.type.includes(type) || item.category === type
         })
       : allCards
@@ -39,6 +41,10 @@ Page({
         (item.title || '').includes(keyword) ||
         (item.type || '').includes(keyword) ||
         (item.location || '').includes(keyword) ||
+        (item.village || '').includes(keyword) ||
+        (item.address || '').includes(keyword) ||
+        (item.area || '').includes(keyword) ||
+        (item.tags || '').includes(keyword) ||
         (item.desc || '').includes(keyword) ||
         (item.target || '').includes(keyword) ||
         (item.benefit || '').includes(keyword)
