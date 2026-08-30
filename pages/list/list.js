@@ -5,7 +5,8 @@ Page({
     cards: [],
     keyword: '',
     currentType: '',
-    pageTitle: '我能来做什么'
+    pageTitle: '我能来做什么',
+    isContact: false
   },
 
   onLoad(options) {
@@ -16,17 +17,34 @@ Page({
       '咨询单位': '我该找谁'
     }
     const pageTitle = titleMap[type] || '我能来做什么'
-    const cards = type ? allCards.filter(item => item.type.includes(type) || item.category === type) : allCards
-    this.setData({ cards, currentType: type, pageTitle })
+    const cards = this.filterCards(type, '')
+    this.setData({
+      cards,
+      currentType: type,
+      pageTitle,
+      isContact: type === '咨询单位'
+    })
+  },
+
+  filterCards(type, keyword) {
+    let cards = type
+      ? allCards.filter(item => item.type.includes(type) || item.category === type)
+      : allCards
+
+    if (keyword) {
+      cards = cards.filter(item =>
+        (item.title || '').includes(keyword) ||
+        (item.type || '').includes(keyword) ||
+        (item.location || '').includes(keyword) ||
+        (item.desc || '').includes(keyword)
+      )
+    }
+    return cards
   },
 
   search(e) {
-    const keyword = e.detail.value
-    const cards = allCards.filter(item =>
-      item.name.includes(keyword) ||
-      item.type.includes(keyword) ||
-      item.location.includes(keyword)
-    )
+    const keyword = e.detail.value.trim()
+    const cards = this.filterCards(this.data.currentType, keyword)
     this.setData({ keyword, cards })
   },
 
@@ -34,5 +52,17 @@ Page({
     wx.navigateTo({
       url:'/pages/detail/detail?id=' + e.currentTarget.dataset.id
     })
+  },
+
+  callPhone(e) {
+    const phone = e.currentTarget.dataset.phone || ''
+    if (/^\d[\d-]*$/.test(phone)) {
+      wx.makePhoneCall({ phoneNumber: phone.replace(/-/g, '') })
+    } else {
+      wx.showToast({
+        title: '请通过德清县人民政府官网查询',
+        icon: 'none'
+      })
+    }
   }
 })
